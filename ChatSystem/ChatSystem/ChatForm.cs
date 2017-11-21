@@ -17,7 +17,7 @@ namespace ChatSystem
         public string currentUser;
         BindingSource roomBinding = new BindingSource();
 
-        public string selectRoom;
+        public string selectRoom = "";
 
         public ChatForm()
         {
@@ -84,11 +84,14 @@ namespace ChatSystem
 
         private void btnSend_Click(object sender, EventArgs e)
         {
-            if(txtUserMessage.Text != "")
+            if(txtUserMessage.Text != "" && selectRoom != "")
             {
                 con.messages.Add(new Message { username = currentUser, message = txtUserMessage.Text, roomName = selectRoom, time = DateTime.Now.ToString("HH:mm") });
                 UpdateServerChat();
                 txtUserMessage.Clear();
+            } else
+            {
+                txtServerChat.Text = "You need to chose a server \r\n <-------";
             }
         }
 
@@ -107,7 +110,7 @@ namespace ChatSystem
 
             selectRoom = string.Format(selectedRoom.name);
 
-            MessageBox.Show(selectRoom);
+            //MessageBox.Show(selectRoom);
 
             txtServerChat.Clear();
             foreach (Message message in con.messages.Where(x => x.roomName == selectRoom))
@@ -122,7 +125,7 @@ namespace ChatSystem
 
             selectRoom = string.Format(selectedRoom.name);
 
-            MessageBox.Show(selectRoom);
+            //MessageBox.Show(selectRoom);
 
             txtServerChat.Clear();
             foreach (Message message in con.messages.Where(x => x.roomName == selectRoom))
