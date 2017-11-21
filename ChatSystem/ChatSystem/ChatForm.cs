@@ -41,9 +41,14 @@ namespace ChatSystem
             con.rooms.Add(new Room { name = "ASDF" });
             con.rooms.Add(new Room { name = "Programmer" });
 
-            con.users.Add(new User { id = 1, name = "John", password = "gemme" });
-            con.users.Add(new User { id = 2, name = "Lukas", password = "gemme1" });
-            
+            con.users.Add(new User { id = 1, name = "John", password = "pas" });
+            con.users.Add(new User { id = 2, name = "Lukas", password = "pas" });
+            con.users.Add(new User { id = 3, name = "Jonas", password = "pas" });
+            con.users.Add(new User { id = 2, name = "Kevin", password = "pas" });
+            con.users.Add(new User { id = 2, name = "Danny", password = "pas" });
+            con.users.Add(new User { id = 2, name = "Jannik", password = "pas" });
+
+
 
         }
 
