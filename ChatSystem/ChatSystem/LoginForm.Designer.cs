@@ -86,11 +86,14 @@
             this.Exit.TabIndex = 5;
             this.Exit.Text = "Exit";
             this.Exit.UseVisualStyleBackColor = true;
+            this.Exit.Click += new System.EventHandler(this.Exit_Click);
             // 
             // LoginForm
             // 
+            this.AcceptButton = this.Login;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.Exit;
             this.ClientSize = new System.Drawing.Size(289, 153);
             this.Controls.Add(this.Exit);
             this.Controls.Add(this.Login);
@@ -99,6 +102,7 @@
             this.Controls.Add(this.userNameTxt);
             this.Controls.Add(this.label1);
             this.Name = "LoginForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginForm";
             this.Load += new System.EventHandler(this.LoginForm_Load);
             this.ResumeLayout(false);

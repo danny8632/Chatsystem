@@ -34,5 +34,11 @@ namespace ChatSystem
         {
             //f1.Show(false);
         }
+
+        private void Exit_Click(object sender, EventArgs e)
+        {
+            f1.Close();
+            this.Close();
+        }
     }
 }
